@@ -31,7 +31,11 @@ class ReservaController extends Controller
             ->join('horas', 'horario.id_horas', '=', 'horas.id_horas')
             ->select('horario.id_fecha', 'horas.hora_inicio', 'horas.hora_fin', 'reserva.id_reserva')
             ->where('USUARIO.id_usuario', '=', $id_us)
-            ->get();
+            ->get()->first();
+        
+        // $resultado = $reservas->first();
+
+        // dd($resultado->id_reserva);
         return view('reservas.index', compact('reservas'));  
     }
 
@@ -79,7 +83,7 @@ class ReservaController extends Controller
     {
     
 
-        $reservas= DB::table('reserva')
+        $reservas = DB::table('reserva')
                     ->where('reserva.id_reserva','=',$id)
                     ->join('USUARIO','reserva.id_usuario','=','USUARIO.id_usuario') 
                     ->join('evento','reserva.id_reserva' ,'=','evento.id_reserva')                   
