@@ -8,11 +8,14 @@ class Evento extends Model
 {
     protected $table = 'evento';
     protected $primaryKey = 'id_evento';
+    public $incrementing = true;
     public $timestamps = false;
 
     public $fillable = [
-        'id_reserva', 'id_ambiente', 'tipo'
+        'id_evento',
+
     ];
+
 
     public function peteneceAmbiente()
     {

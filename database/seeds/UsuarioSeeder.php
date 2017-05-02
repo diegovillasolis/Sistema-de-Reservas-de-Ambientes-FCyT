@@ -80,5 +80,25 @@ class UsuarioSeeder extends Seeder
             'password' => '123456',
             'tipo' => 'docente',
         ]);
+
+        Usuario::create([
+            'nombre' => 'Leticia',
+            'apellido_paterno' => 'Blanco',
+            'apellido_materno' => 'Coca',
+            'email' => 'leti@gmail.com',
+            'username' => 'leticia',
+            'password' => '123456',
+            'tipo' => 'docente',
+        ]);
+
+        Usuario::create([
+            'nombre' => 'Patricia',
+            'apellido_paterno' => 'Romero',
+            'apellido_materno' => 'Bilbao',
+            'email' => 'patricia@gmail.com',
+            'username' => 'patricia',
+            'password' => '123456',
+            'tipo' => 'docente',
+        ]);
     }
 }
